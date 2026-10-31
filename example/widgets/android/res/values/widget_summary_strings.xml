@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="widget_summary_label">Summary</string>
+    <string name="widget_summary_description">A title and a value from the app</string>
+    <string name="widget_summary_empty">Open the app to start</string>
+</resources>

@@ -1,0 +1,96 @@
+{
+	"name": "expo-android-widgets",
+	"version": "1.0.0",
+	"description": "Android home screen widgets for Expo and React Native, written in Kotlin with RemoteViews. A config plugin that adds your widget providers on every prebuild, plus a tiny API to pass data from JavaScript and redraw widgets. Works with Continuous Native Generation (CNG) and EAS Build.",
+	"keywords": [
+		"expo",
+		"expo-plugin",
+		"config-plugin",
+		"react-native",
+		"android",
+		"widget",
+		"widgets",
+		"home screen widget",
+		"appwidget",
+		"app widget",
+		"remoteviews",
+		"kotlin",
+		"prebuild",
+		"cng",
+		"eas"
+	],
+	"homepage": "https://github.com/rsoaresdev/expo-android-widgets#readme",
+	"bugs": "https://github.com/rsoaresdev/expo-android-widgets/issues",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/rsoaresdev/expo-android-widgets.git"
+	},
+	"license": "MIT",
+	"author": "Rafael Soares (https://github.com/rsoaresdev)",
+	"main": "./build/index.js",
+	"types": "./build/index.d.ts",
+	"exports": {
+		".": {
+			"import": {
+				"types": "./build/index.d.mts",
+				"default": "./build/index.mjs"
+			},
+			"require": {
+				"types": "./build/index.d.ts",
+				"default": "./build/index.js"
+			}
+		},
+		"./app.plugin.js": {
+			"types": "./app.plugin.d.ts",
+			"default": "./app.plugin.js"
+		},
+		"./package.json": "./package.json"
+	},
+	"files": [
+		"build",
+		"src",
+		"plugin/build",
+		"plugin/src",
+		"android/build.gradle",
+		"android/src",
+		"app.plugin.js",
+		"expo-module.config.json",
+		"example",
+		"app.plugin.d.ts"
+	],
+	"scripts": {
+		"build": "rm -rf plugin/build && tsdown --config-loader native && tsc -p plugin/tsconfig.json",
+		"typecheck": "tsc --noEmit && tsc -p plugin/tsconfig.json --noEmit",
+		"test": "vitest run",
+		"lint": "biome check .",
+		"format": "biome check --write .",
+		"prepublishOnly": "npm run lint && npm run typecheck && npm run coverage && npm run build && npm run check:package",
+		"coverage": "vitest run --coverage",
+		"check:package": "publint && attw --pack .",
+		"e2e:android": "./scripts/e2e-android.sh",
+		"smoke": "node scripts/smoke.cjs"
+	},
+	"peerDependencies": {
+		"expo": ">=58",
+		"react-native": "*"
+	},
+	"devDependencies": {
+		"@arethetypeswrong/cli": "^0.18.5",
+		"@biomejs/biome": "^2.6.4",
+		"@types/node": "^26.6.6",
+		"@vitest/coverage-v8": "^5.0.5",
+		"expo": "^58.0.21",
+		"publint": "^0.3.25",
+		"react": "^19.3.1",
+		"react-native": "^0.88.1",
+		"tsdown": "^0.23.4",
+		"typescript": "^6.0.3",
+		"vitest": "^5.0.5"
+	},
+	"type": "commonjs",
+	"module": "./build/index.mjs",
+	"sideEffects": false,
+	"engines": {
+		"node": ">=20"
+	}
+}
