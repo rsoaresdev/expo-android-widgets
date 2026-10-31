@@ -1,5 +1,7 @@
 # expo-android-widgets
 
+![expo-android-widgets: Android home screen widgets for Expo, in native Kotlin](.github/assets/cover.png)
+
 [![npm](https://img.shields.io/npm/v/expo-android-widgets.svg)](https://www.npmjs.com/package/expo-android-widgets)
 [![CI](https://github.com/rsoaresdev/expo-android-widgets/actions/workflows/ci.yml/badge.svg)](https://github.com/rsoaresdev/expo-android-widgets/actions/workflows/ci.yml)
 [![license](https://img.shields.io/npm/l/expo-android-widgets.svg)](LICENSE)
