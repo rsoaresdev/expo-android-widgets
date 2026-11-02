@@ -2,6 +2,13 @@
 
 All notable changes to this package are listed here. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the versions follow [Semantic Versioning](https://semver.org/).
 
+## [Unreleased]
+
+### Changed
+
+- The README is rewritten around examples, with recipes for keeping a widget in sync, clearing it on sign-out and redrawing one widget.
+- The example widget hides its empty value line, so the empty-state text is centred.
+
 ## [1.0.0] - 2026-10-30
 
 ### Added

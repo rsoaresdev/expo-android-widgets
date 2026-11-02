@@ -4,6 +4,7 @@ import android.app.PendingIntent
 import android.appwidget.AppWidgetManager
 import android.appwidget.AppWidgetProvider
 import android.content.Context
+import android.view.View
 import android.widget.RemoteViews
 import __PACKAGE__.R
 import expo.modules.androidwidgets.WidgetData
@@ -29,6 +30,8 @@ class SummaryWidget : AppWidgetProvider() {
       val views = RemoteViews(context.packageName, R.layout.widget_summary)
       views.setTextViewText(R.id.widget_summary_title, title)
       views.setTextViewText(R.id.widget_summary_value, value)
+      // Hidden when empty, so the empty-state text sits centred instead of above a blank line.
+      views.setViewVisibility(R.id.widget_summary_value, if (value.isEmpty()) View.GONE else View.VISIBLE)
       if (open != null) views.setOnClickPendingIntent(R.id.widget_summary_root, open)
       manager.updateAppWidget(id, views)
     }
