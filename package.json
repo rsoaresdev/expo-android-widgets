@@ -1,6 +1,6 @@
 {
 	"name": "expo-android-widgets",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Android home screen widgets for Expo and React Native, written in Kotlin with RemoteViews. A config plugin that adds your widget providers on every prebuild, plus a tiny API to pass data from JavaScript and redraw widgets. Works with Continuous Native Generation (CNG) and EAS Build.",
 	"keywords": [
 		"expo",
